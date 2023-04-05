@@ -22,6 +22,7 @@ class Form extends Component {
     return (
       <form>
         <Input
+          name="cardName"
           tipo="text"
           dataTestid="name-input"
           label="Nome"
@@ -30,6 +31,7 @@ class Form extends Component {
         />
 
         <Input
+          name="cardDescription"
           tipo="textarea"
           dataTestid="description-input"
           label="Descrição"
@@ -38,6 +40,7 @@ class Form extends Component {
         />
 
         <Input
+          name="cardAttr1"
           tipo="number"
           dataTestid="attr1-input"
           label="Attr01"
@@ -46,6 +49,7 @@ class Form extends Component {
         />
 
         <Input
+          name="cardAttr2"
           tipo="number"
           dataTestid="attr2-input"
           label="Attr02"
@@ -53,6 +57,7 @@ class Form extends Component {
           onChange={ onInputChange }
         />
         <Input
+          name="cardAttr3"
           tipo="number"
           dataTestid="attr3-input"
           label="Attr03"
@@ -61,6 +66,7 @@ class Form extends Component {
         />
 
         <Input
+          name="cardImage"
           tipo="text"
           dataTestid="image-input"
           label="Imagem"
@@ -69,7 +75,7 @@ class Form extends Component {
         />
 
         <select
-          name=""
+          name="cardRare"
           id=""
           data-testid="rare-input"
           value={ cardRare }
@@ -83,6 +89,7 @@ class Form extends Component {
         <label htmlFor="">
           Super Trybe Trunfo
           <input
+            name="cardTrunfo"
             type="checkbox"
             data-testid="trunfo-input"
             checked={ cardTrunfo }
