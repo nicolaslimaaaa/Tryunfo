@@ -13,7 +13,7 @@ class App extends React.Component {
     cardRare: 'normal',
     cardTrunfo: '',
     hasTrunfo: false,
-    isSaveButtonDisabled: false,
+    isSaveButtonDisabled: true,
   };
 
   onInputChange = ({ target: { value, name } }) => {
@@ -24,6 +24,24 @@ class App extends React.Component {
 
   // onSaveButtonClick = () => {
 
+  // };
+
+  // verifyInputs = () => {
+  //   const {
+  //     cardName,
+  //     cardDescription,
+  //     cardAttr1,
+  //     cardAttr2,
+  //     cardAttr3,
+  //     cardImage,
+  //   } = this.state;
+
+  //   const nome = cardName !== '';
+  // const descricao = cardDescription !== '';
+  // const imagem = cardImage.length !== '';
+  // const sumAttr = cardAttr1 + cardAttr2 + cardAttr3 <= Number('210');
+  // const allVerify = nome && descricao && imagem && sumAttr;
+  //   return !nome;
   // };
 
   render() {

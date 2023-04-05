@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Input from './Input';
+import './Form.css';
 
 class Form extends Component {
   render() {
@@ -21,90 +22,93 @@ class Form extends Component {
 
     return (
       <form>
-        <Input
-          name="cardName"
-          tipo="text"
-          dataTestid="name-input"
-          label="Nome"
-          value={ cardName }
-          onChange={ onInputChange }
-        />
+        <div>
 
-        <Input
-          name="cardDescription"
-          tipo="textarea"
-          dataTestid="description-input"
-          label="Descrição"
-          value={ cardDescription }
-          onChange={ onInputChange }
-        />
-
-        <Input
-          name="cardAttr1"
-          tipo="number"
-          dataTestid="attr1-input"
-          label="Attr01"
-          value={ cardAttr1 }
-          onChange={ onInputChange }
-        />
-
-        <Input
-          name="cardAttr2"
-          tipo="number"
-          dataTestid="attr2-input"
-          label="Attr02"
-          value={ cardAttr2 }
-          onChange={ onInputChange }
-        />
-        <Input
-          name="cardAttr3"
-          tipo="number"
-          dataTestid="attr3-input"
-          label="Attr03"
-          value={ cardAttr3 }
-          onChange={ onInputChange }
-        />
-
-        <Input
-          name="cardImage"
-          tipo="text"
-          dataTestid="image-input"
-          label="Imagem"
-          value={ cardImage }
-          onChange={ onInputChange }
-        />
-
-        <select
-          name="cardRare"
-          id=""
-          data-testid="rare-input"
-          value={ cardRare }
-          onChange={ onInputChange }
-        >
-          <option value="normal">normal</option>
-          <option value="raro">raro</option>
-          <option value="muito raro">muito raro</option>
-        </select>
-
-        <label htmlFor="">
-          Super Trybe Trunfo
-          <input
-            name="cardTrunfo"
-            type="checkbox"
-            data-testid="trunfo-input"
-            checked={ cardTrunfo }
+          <Input
+            name="cardName"
+            tipo="text"
+            dataTestid="name-input"
+            label="Nome"
+            value={ cardName }
             onChange={ onInputChange }
           />
-        </label>
 
-        <button
-          type="button"
-          data-testid="save-button"
-          disabled={ isSaveButtonDisabled }
-          onClick={ onSaveButtonClick }
-        >
-          Salvar
-        </button>
+          <Input
+            name="cardDescription"
+            tipo="textarea"
+            dataTestid="description-input"
+            label="Descrição"
+            value={ cardDescription }
+            onChange={ onInputChange }
+          />
+
+          <Input
+            name="cardAttr1"
+            tipo="number"
+            dataTestid="attr1-input"
+            label="Attr01"
+            value={ cardAttr1 }
+            onChange={ onInputChange }
+          />
+
+          <Input
+            name="cardAttr2"
+            tipo="number"
+            dataTestid="attr2-input"
+            label="Attr02"
+            value={ cardAttr2 }
+            onChange={ onInputChange }
+          />
+          <Input
+            name="cardAttr3"
+            tipo="number"
+            dataTestid="attr3-input"
+            label="Attr03"
+            value={ cardAttr3 }
+            onChange={ onInputChange }
+          />
+
+          <Input
+            name="cardImage"
+            tipo="text"
+            dataTestid="image-input"
+            label="Imagem"
+            value={ cardImage }
+            onChange={ onInputChange }
+          />
+
+          <select
+            name="cardRare"
+            id=""
+            data-testid="rare-input"
+            value={ cardRare }
+            onChange={ onInputChange }
+          >
+            <option value="normal">normal</option>
+            <option value="raro">raro</option>
+            <option value="muito raro">muito raro</option>
+          </select>
+
+          <label htmlFor="">
+            Super Trybe Trunfo
+            <input
+              name="cardTrunfo"
+              type="checkbox"
+              data-testid="trunfo-input"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+            />
+          </label>
+
+          <button
+            type="button"
+            data-testid="save-button"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+          >
+            Salvar
+          </button>
+        </div>
       </form>
     );
   }
