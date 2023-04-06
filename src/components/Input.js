@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Input.css';
 
 class Input extends Component {
   render() {
     const { name, tipo, dataTestid, label, value, onChange } = this.props;
     return (
-      <label htmlFor="">
+      <label htmlFor={ name }>
         { label }
         <input
           name={ name }
@@ -13,6 +14,8 @@ class Input extends Component {
           data-testid={ dataTestid }
           value={ value }
           onChange={ onChange }
+          id={ name }
+          className="input-input"
         />
       </label>
     );

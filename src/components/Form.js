@@ -83,13 +83,14 @@ class Form extends Component {
             data-testid="rare-input"
             value={ cardRare }
             onChange={ onInputChange }
+            className="form-select "
           >
             <option value="normal">normal</option>
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>
           </select>
 
-          <label htmlFor="">
+          <label htmlFor="cardTrunfo">
             Super Trybe Trunfo
             <input
               name="cardTrunfo"
@@ -97,10 +98,12 @@ class Form extends Component {
               data-testid="trunfo-input"
               checked={ cardTrunfo }
               onChange={ onInputChange }
+              id="cardTrunfo"
             />
           </label>
 
           <button
+            name="cardsSaved"
             type="button"
             data-testid="save-button"
             disabled={ isSaveButtonDisabled }
