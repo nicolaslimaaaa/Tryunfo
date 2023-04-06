@@ -17,30 +17,35 @@ class Card extends Component {
     } = this.props;
 
     return (
-      <div>
-        <label htmlFor="">
+      <div className="cards__div">
+        <label htmlFor="" className="cards__label">
           <p data-testid="name-card">{ cardName }</p>
         </label>
 
-        <img src={ cardImage } alt={ cardName } data-testid="image-card" />
+        <img
+          src={ cardImage }
+          alt={ cardName }
+          data-testid="image-card"
+          className="cards__img"
+        />
 
-        <label htmlFor="">
+        <label htmlFor="" className="cards__label">
           <p data-testid="description-card">{ cardDescription }</p>
         </label>
 
-        <label htmlFor="">
+        <label htmlFor="" className="cards__label">
           <p data-testid="attr1-card">{ cardAttr1 }</p>
         </label>
 
-        <label htmlFor="">
+        <label htmlFor="" className="cards__label">
           <p data-testid="attr2-card">{ cardAttr2 }</p>
         </label>
 
-        <label htmlFor="">
+        <label htmlFor="" className="cards__label">
           <p data-testid="attr3-card">{ cardAttr3 }</p>
         </label>
 
-        <label htmlFor="">
+        <label htmlFor="" className="cards__label">
           <p data-testid="rare-card">{ cardRare }</p>
         </label>
 

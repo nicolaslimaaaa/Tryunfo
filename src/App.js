@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Deck from './components/Deck';
+import './index.css';
 
 class App extends React.Component {
   state = {
@@ -58,6 +60,7 @@ class App extends React.Component {
         cardImage: '',
         cardRare: 'normal',
         hasTrunfo: cardTrunfo ? true : hasTrunfo,
+        isSaveButtonDisabled: true,
       }
     ));
   };
@@ -105,7 +108,7 @@ class App extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="app__div">
         <Form
           cardName={ cardName }
           cardDescription={ cardDescription }
@@ -133,19 +136,9 @@ class App extends React.Component {
           hasTrunfo={ hasTrunfo }
         />
 
-        {
-          deck.map((card, index) => (<Card
-            key={ index }
-            cardName={ card.cardName }
-            cardDescription={ card.cardDescription }
-            cardAttr1={ card.cardAttr1 }
-            cardAttr2={ card.cardAttr2 }
-            cardAttr3={ card.cardAttr3 }
-            cardImage={ card.cardImage }
-            cardRare={ card.cardRare }
-            cardTrunfo={ card.cardTrunfo }
-          />))
-        }
+        <Deck
+          deck={ deck }
+        />
       </div>
     );
   }

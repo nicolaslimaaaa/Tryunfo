@@ -8,6 +8,18 @@ body {
   background-color: lightblue;
 }
 
+.app__div-display {
+  display: flex;
+  align-items: center;
+}
+
+div {
+  display: flex;
+  flex-wrap: 1;
+  max-width: 900px;
+  width: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -22,7 +22,7 @@ class Form extends Component {
 
     return (
       <form>
-        <div>
+        <div className="forms__div">
 
           <Input
             name="cardName"
