@@ -31,9 +31,9 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardImage,
+      cardRare,
       cardTrunfo,
       hasTrunfo,
-      // deck,
     } = this.state;
 
     this.setState((prev) => (
@@ -41,12 +41,14 @@ class App extends React.Component {
         deck: [
           ...prev.deck,
           {
-            name: cardName,
-            description: cardDescription,
-            atrr1: cardAttr1,
-            atrr2: cardAttr2,
-            atrr3: cardAttr3,
-            image: cardImage,
+            cardName,
+            cardDescription,
+            cardAttr1,
+            cardAttr2,
+            cardAttr3,
+            cardImage,
+            cardRare,
+            cardTrunfo,
           }],
         cardName: '',
         cardDescription: '',
@@ -99,7 +101,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
-      // deck,
+      deck,
     } = this.state;
 
     return (
@@ -118,6 +120,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
+
         <Card
           cardName={ cardName }
           cardDescription={ cardDescription }
@@ -127,7 +130,22 @@ class App extends React.Component {
           cardImage={ cardImage }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+          hasTrunfo={ hasTrunfo }
         />
+
+        {
+          deck.map((card, index) => (<Card
+            key={ index }
+            cardName={ card.cardName }
+            cardDescription={ card.cardDescription }
+            cardAttr1={ card.cardAttr1 }
+            cardAttr2={ card.cardAttr2 }
+            cardAttr3={ card.cardAttr3 }
+            cardImage={ card.cardImage }
+            cardRare={ card.cardRare }
+            cardTrunfo={ card.cardTrunfo }
+          />))
+        }
       </div>
     );
   }
