@@ -16,7 +16,7 @@ class Card extends Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="batatinha">
         <label htmlFor="">
           <p data-testid="name-card">{ cardName }</p>
         </label>

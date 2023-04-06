@@ -4,6 +4,12 @@ form {
   align-items: center;
 }
 
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 input, select {
   border-radius: 10px;
   margin: 5px 20px;
