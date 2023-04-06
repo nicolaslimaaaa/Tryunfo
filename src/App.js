@@ -14,7 +14,7 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
-    cardsSaved: [],
+    deck: [],
   };
 
   onInputChange = ({ target: { value, name, checked } }) => {
@@ -31,26 +31,33 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardImage,
-      cardsSaved,
+      cardTrunfo,
+      hasTrunfo,
+      // deck,
     } = this.state;
 
-    this.setState({
-      cardsSaved: [{
-        name: cardName,
-        description: cardDescription,
-        atrr1: cardAttr1,
-        atrr2: cardAttr2,
-        atrr3: cardAttr3,
-        image: cardImage,
-      }],
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
-      cardImage: '',
-      cardRare: 'normal',
-    });
+    this.setState((prev) => (
+      {
+        deck: [
+          ...prev.deck,
+          {
+            name: cardName,
+            description: cardDescription,
+            atrr1: cardAttr1,
+            atrr2: cardAttr2,
+            atrr3: cardAttr3,
+            image: cardImage,
+          }],
+        cardName: '',
+        cardDescription: '',
+        cardAttr1: 0,
+        cardAttr2: 0,
+        cardAttr3: 0,
+        cardImage: '',
+        cardRare: 'normal',
+        hasTrunfo: cardTrunfo ? true : hasTrunfo,
+      }
+    ));
   };
 
   verifyInputs = () => {
@@ -92,7 +99,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
-      cardsSaved,
+      // deck,
     } = this.state;
 
     return (
