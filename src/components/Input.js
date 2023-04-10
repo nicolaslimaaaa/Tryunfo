@@ -5,6 +5,7 @@ import './Input.css';
 class Input extends Component {
   render() {
     const { name, tipo, dataTestid, label, value, onChange } = this.props;
+
     return (
       <label htmlFor={ name }>
         { label }

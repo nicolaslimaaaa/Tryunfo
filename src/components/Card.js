@@ -19,6 +19,7 @@ class Card extends Component {
     return (
       <div className="cards__div">
         <label htmlFor="" className="cards__label">
+
           <p data-testid="name-card">{ cardName }</p>
         </label>
 
