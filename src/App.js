@@ -92,6 +92,22 @@ class App extends React.Component {
     });
   };
 
+  onDeleteButtonClick = ({ target: { name } }) => {
+    const {
+      cardTrunfo,
+      hasTrunfo,
+      deck,
+    } = this.state;
+
+    const deckFilter = deck.filter((card) => card.cardName !== name);
+
+    this.setState({
+      deck: deckFilter,
+      cardTrunfo: cardTrunfo ? false : cardTrunfo,
+      hasTrunfo: cardTrunfo ? false : hasTrunfo,
+    });
+  };
+
   render() {
     const {
       cardName,
@@ -138,6 +154,7 @@ class App extends React.Component {
 
         <Deck
           deck={ deck }
+          onDeleteButtonClick={ this.onDeleteButtonClick }
         />
       </div>
     );

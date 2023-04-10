@@ -1,21 +1,21 @@
-/* .cards__div {
-  display: flex;
-  flex-direction: column;
+.cards__div {
   align-items: center;
   border: 1px solid black;
   border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  margin: 0 20px;
   max-width: 400px;
   width: 100%;
-  margin: 0 20px;
-  height: 500px;
 }
 
 .cards__img {
-  width: 280px;
   border-radius: 20px;
+  width: 280px;
 }
 
 .cards__label {
-  text-align: center;
   display: block;
-} */
+  text-align: center;
+}

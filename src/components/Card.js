@@ -51,6 +51,7 @@ class Card extends Component {
         </label>
 
         { (cardTrunfo) && <p data-testid="trunfo-card">Super Trunfo</p> }
+
       </div>
     );
   }

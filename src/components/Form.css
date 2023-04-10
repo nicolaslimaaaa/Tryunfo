@@ -1,23 +1,23 @@
-/* form {
+form {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .forms__div {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-width: 400px;
-  width: 100%
+  width: 100%;
 }
 
 .form-select {
-  border-radius: 30px;
-  margin: 5px 20px;
   border: 1px solid blue;
-  text-align: center;
+  border-radius: 30px;
   height: 30px;
+  margin: 5px 20px;
+  text-align: center;
 }
 
 select {
@@ -25,9 +25,9 @@ select {
 }
 
 label {
+  align-items: center;
   color: darkblue;
-  width: 300px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-} */
+  width: 300px;
+}
