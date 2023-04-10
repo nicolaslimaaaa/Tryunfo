@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Card from './components/Card';
 import Deck from './components/Deck';
 import './index.css';
+import Filters from './components/Filters';
 
 class App extends React.Component {
   state = {
@@ -17,6 +18,7 @@ class App extends React.Component {
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     deck: [],
+    valueInput: '',
   };
 
   onInputChange = ({ target: { value, name, checked } }) => {
@@ -94,17 +96,17 @@ class App extends React.Component {
 
   onDeleteButtonClick = ({ target: { name } }) => {
     const {
-      cardTrunfo,
       hasTrunfo,
       deck,
     } = this.state;
 
     const deckFilter = deck.filter((card) => card.cardName !== name);
 
+    const cardRemoved = deck.find((card) => card.cardName === name);
+
     this.setState({
       deck: deckFilter,
-      cardTrunfo: cardTrunfo ? false : cardTrunfo,
-      hasTrunfo: cardTrunfo ? false : hasTrunfo,
+      hasTrunfo: cardRemoved.cardTrunfo ? false : hasTrunfo,
     });
   };
 
@@ -121,6 +123,7 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       deck,
+      valueInput,
     } = this.state;
 
     return (
@@ -155,6 +158,12 @@ class App extends React.Component {
         <Deck
           deck={ deck }
           onDeleteButtonClick={ this.onDeleteButtonClick }
+          valueInput={ valueInput }
+        />
+
+        <Filters
+          onInputChange={ this.onInputChange }
+          valueInput={ valueInput }
         />
       </div>
     );

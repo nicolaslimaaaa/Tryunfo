@@ -8,34 +8,37 @@ class Deck extends Component {
     const {
       deck,
       onDeleteButtonClick,
+      valueInput,
     } = this.props;
 
     return (
       <div className="deck__div">
-        {deck.map((card, index) => (
-          <div key={ index }>
-            <Card
-              cardName={ card.cardName }
-              cardDescription={ card.cardDescription }
-              cardAttr1={ card.cardAttr1 }
-              cardAttr2={ card.cardAttr2 }
-              cardAttr3={ card.cardAttr3 }
-              cardImage={ card.cardImage }
-              cardRare={ card.cardRare }
-              cardTrunfo={ card.cardTrunfo }
-            />
+        {deck
+          .filter((card) => card.cardName.includes(valueInput))
+          .map((card, index) => (
+            <div key={ index }>
+              <Card
+                cardName={ card.cardName }
+                cardDescription={ card.cardDescription }
+                cardAttr1={ card.cardAttr1 }
+                cardAttr2={ card.cardAttr2 }
+                cardAttr3={ card.cardAttr3 }
+                cardImage={ card.cardImage }
+                cardRare={ card.cardRare }
+                cardTrunfo={ card.cardTrunfo }
+              />
 
-            <button
-              name={ card.cardName }
-              type="button"
-              data-testid="delete-button"
-              onClick={ onDeleteButtonClick }
-            >
-              Excluir
-            </button>
+              <button
+                name={ card.cardName }
+                type="button"
+                data-testid="delete-button"
+                onClick={ onDeleteButtonClick }
+              >
+                Excluir
+              </button>
 
-          </div>
-        ))}
+            </div>
+          ))}
       </div>
     );
   }
@@ -44,6 +47,7 @@ class Deck extends Component {
 Deck.propTypes = {
   deck: PropTypes.arrayOf().isRequired,
   onDeleteButtonClick: PropTypes.func.isRequired,
+  valueInput: PropTypes.string.isRequired,
 };
 
 export default Deck;
