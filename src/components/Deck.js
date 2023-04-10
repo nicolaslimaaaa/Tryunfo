@@ -8,13 +8,15 @@ class Deck extends Component {
     const {
       deck,
       onDeleteButtonClick,
-      valueInput,
+      nameInput,
+      rareInput,
     } = this.props;
 
     return (
       <div className="deck__div">
         {deck
-          .filter((card) => card.cardName.includes(valueInput))
+          .filter((card) => card.cardName.includes(nameInput))
+          .filter((card) => card.cardRare.startsWith(rareInput))
           .map((card, index) => (
             <div key={ index }>
               <Card
@@ -47,7 +49,8 @@ class Deck extends Component {
 Deck.propTypes = {
   deck: PropTypes.arrayOf().isRequired,
   onDeleteButtonClick: PropTypes.func.isRequired,
-  valueInput: PropTypes.string.isRequired,
+  nameInput: PropTypes.string.isRequired,
+  rareInput: PropTypes.string.isRequired,
 };
 
 export default Deck;

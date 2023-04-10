@@ -18,7 +18,8 @@ class App extends React.Component {
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     deck: [],
-    valueInput: '',
+    nameInput: '',
+    rareInput: '',
   };
 
   onInputChange = ({ target: { value, name, checked } }) => {
@@ -123,7 +124,8 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       deck,
-      valueInput,
+      nameInput,
+      rareInput,
     } = this.state;
 
     return (
@@ -158,12 +160,14 @@ class App extends React.Component {
         <Deck
           deck={ deck }
           onDeleteButtonClick={ this.onDeleteButtonClick }
-          valueInput={ valueInput }
+          nameInput={ nameInput }
+          rareInput={ rareInput }
         />
 
         <Filters
           onInputChange={ this.onInputChange }
-          valueInput={ valueInput }
+          nameInput={ nameInput }
+          rareInput={ rareInput }
         />
       </div>
     );
