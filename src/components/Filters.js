@@ -32,7 +32,19 @@ export default class Filters extends Component {
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>
           </select>
+        </label>
 
+        <label
+          htmlFor="superTrunfo"
+          data-testid="trunfo-filter"
+        >
+          Super Trunfo
+          <input
+            type="checkbox"
+            name=""
+            id="superTrunfo"
+            checked="false"
+          />
         </label>
       </div>
     );
