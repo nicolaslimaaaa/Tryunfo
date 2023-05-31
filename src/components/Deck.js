@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
-import './Deck.css';
 
 class Deck extends Component {
   render() {
@@ -13,12 +12,17 @@ class Deck extends Component {
     } = this.props;
 
     return (
-      <div className="deck__div">
+      <div
+        className=""
+      >
         {deck
           .filter((card) => card.cardName.includes(nameInput))
           .filter((card) => card.cardRare.startsWith(rareInput))
           .map((card, index) => (
-            <div key={ index }>
+            <div
+              key={ index }
+              className=""
+            >
               <Card
                 cardName={ card.cardName }
                 cardDescription={ card.cardDescription }
